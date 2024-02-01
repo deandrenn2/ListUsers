@@ -1,4 +1,16 @@
-:root{
+body{
+    background-color: cornflowerblue;
+  }
+  table thead {
+        background:#302b63;
+        color:white;
+    }
+
+   .fila{
+    color: black;
+   }
+
+   :root{
     --var--fontsize: 14px;
     --var-color-primary: #1f5cc5;
     --var-color-blue: #2768d8;
@@ -21,6 +33,7 @@ html{
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
     background-color: var(--var-color-whiteBlue); 
+    
 }
 
 /***
@@ -36,10 +49,12 @@ Header
     /*padding-left: 20px;*/
     font-size: 1.8rem;
     font-weight: lighter;
+    
 }
 
 .header__title{
     font-weight: 200;
+    
 }
 /***
 End Header
@@ -49,21 +64,39 @@ End Header
 Card
 ***/
 .card-user{
-    background-color: #1f5cc5;
+    background-color: #8fe881;
     max-width: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
     padding: 1rem;
-    margin: 1rem;
+    margin: 3%;
     color: var(--var-color-whiteBlue);
     font-size: 1.5rem;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 29px;
+    position: relative; 
+    display: inline-block
+
+    
 }
 
-.card-user__button{
+.card-user__button{ 
 
+    background-color: #ff0000;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    color: #fffefe;
+    font-size: 1.3rem;
+    border-radius:50%;
+    position: absolute;
+    font-size: 19px;
+    font-weight:bold ;
+    top: -3px;
+    right: -2px;
 }
 
 .card-user__img{
@@ -74,3 +107,29 @@ Card
 /***
 End Card
 ***/
+button{
+    border: 9;
+    border-radius: 6px;
+    color: #000000;
+    display: flex;
+    font-size: 23px;
+    padding: 0%;
+    transition: .3s;
+    position: absolute;
+    top: 67px;
+    right: 238px;
+    justify-content:center ;
+    align-items: center;}
+
+
+button span{
+background-color: #67c24b;
+padding: 0px 0%;
+border-radius: 6px;
+transition: .3s;
+
+}
+
+button:hover span{
+    background: none;}
+
