@@ -23,7 +23,7 @@ body{
 * {
     box-sizing: border-box;
     margin: 0px;
-    padding: 0px;
+    padding: 2px;
 }
 
 html{
@@ -64,12 +64,12 @@ End Header
 Card
 ***/
 .card-user{
-    background-color: #8fe881;
-    max-width: 300px;
+    background-color: #20ec01;
+    max-width: 299px;
     display: flex;
     flex-direction: column;
 
-    padding: 1rem;
+ 
     margin: 3%;
     color: var(--var-color-whiteBlue);
     font-size: 1.5rem;
@@ -100,8 +100,12 @@ Card
 }
 
 .card-user__img{
-    max-width: 150px;
-    border-radius: 25px;
+    max-width: 125px;
+    border-radius: 275px;
+    align-items: center;
+    margin: auto;
+
+    
 }
 
 /***
@@ -116,20 +120,54 @@ button{
     padding: 0%;
     transition: .3s;
     position: absolute;
-    top: 67px;
+    top: 56px;
     right: 238px;
-    justify-content:center ;
     align-items: center;}
 
 
 button span{
-background-color: #67c24b;
-padding: 0px 0%;
-border-radius: 6px;
+background-color: #44ff00;
+padding: 2px 0px;
+border-radius: 9px;
 transition: .3s;
+align-items: center;
+top: 67px;
+right: 38px;
 
 }
 
 button:hover span{
     background: none;}
 
+.usuario{
+    color: #fffefe;
+ 
+    
+}
+
+.tel{
+color: #000000;
+top: 40px;
+right: 32px;
+}
+
+.Usuar{
+ color: #2768d8;
+
+}
+
+.fila{
+color: #000000;
+background-color: #20ec01;
+display: flex;
+flex-direction: column;
+border-radius: 200px;
+
+}
+.agregar{
+background-color: #44ff00;
+padding: 0px 0px;
+top: 57px;
+right: 39px;
+
+}
