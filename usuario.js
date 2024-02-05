@@ -12,7 +12,7 @@ const mostrarData = (data) => {
         body += `<div class="card-user">
         <a id="eliminarBtn" class="card-user__button" href="#">x</a>
                     <div class="fila">
-                        <div class="celda">Card ${data[i].id}</div>
+                        <div class="usuario">usuario ${data[i].id}</div>
                         <span class="Usuar">${data[i].name}</span>
                         <img class="card-user__img" src="https://placehold.co/200?text=Perfil"  />
                         <span>TEL:${data[i].phone} </span>
@@ -20,11 +20,20 @@ const mostrarData = (data) => {
                         ${data[i].email}
                         </span>
                         <span>
-                            WebSite: <a href="http://siempre.net.co" target="_blank">SIEMPRE.NET S.A.S.</a>
-                            <h1></h1>
+
                     </div>
                  </div>`;
 
+
+              
+                }
+            
+                // 'body' ahora contiene el HTML de las cajas generadas dinámicamente
+                console.log(body);
+                document.getElementById('data').innerHTML = body
+                //console.log(body)
+            }
+                             
 
 
 
