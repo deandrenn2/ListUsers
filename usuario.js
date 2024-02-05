@@ -37,15 +37,15 @@ var span = document.getElementById("actulizar");
 // Hace referencia al elemento <span> que tiene la X que cierra la ventana
 var card = document.getElementById("card");
 
-span.addEventListener("click",function() {
- card.style.display = "block";
-});
+// span.addEventListener("click",function() {
+//  card.style.display = "block";
+// });
 // Si el usuario hace clic en la x, la ventana se cierra
-card.addEventListener("click",function() {
-console.log("entro");
-card.style.display = "none";
+// card.addEventListener("click",function() {
+// console.log("entro");
+// card.style.display = "none";
  
-});
+// });
 
 var a = document.getElementById("eliminarBtn");
 
