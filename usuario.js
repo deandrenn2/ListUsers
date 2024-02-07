@@ -45,16 +45,24 @@ var agregarForm = document.getElementById("agregarForm");
 
 agregarForm.addEventListener("submit",(e) =>  agregarUsuario(e));
 
-console.log(agregarForm);
+window.addEventListener("load", () => {
+    const btnsDelete = document.querySelectorAll(".card-user__button");
+    btnsDelete.forEach(x => {
+        x.addEventListener("click", () => { console.log("Clic en eliminar") });
+    })
+})
+
+
+
 
 const mostrarData = (data) => {
     localStorage.setItem("usuarios", JSON.stringify(data));
 	console.log(data);
 	let body = ""; // Inicializar el contenido HTML
 
-	for (let i = 0; i < data.length; i++) {
-		body += `<div class="card-user">
-        <a id="eliminarBtn" class="card-user__button" href="#">x</a>
+    for (let i = 0; i < data.length; i++) {
+        body += `<div class="card-user">
+        <a id="eliminarBtn_${data[i].id}" class="card-user__button" href="#">X</a>
                     <div class="fila">
                         <div class="usuario">usuario ${data[i].id}</div>
                         <span class="Usuar">${data[i].name}</span>
@@ -64,10 +72,9 @@ const mostrarData = (data) => {
                         ${data[i].email}
                         </span>
                         <span>
-
                     </div>
                  </div>`;
-	}
+    }
 
 	// 'body' ahora contiene el HTML de las cajas generadas dinámicamente
 	document.getElementById("data").innerHTML = body;
@@ -91,23 +98,3 @@ if (!dataUsuarios){
 
 
 
-// 'body' ahora contiene el HTML de las cajas generadas dinámicamente
-
-//console.log(body)
-
-// Botón que abre el modal
-var span = document.getElementById("actulizar");
-// Hace referencia al elemento <span> que tiene la X que cierra la ventana
-var card = document.getElementById("card");
-
-// span.addEventListener("click",function() {
-//  card.style.display = "block";
-// });
-// Si el usuario hace clic en la x, la ventana se cierra
-// card.addEventListener("click",function() {
-// console.log("entro");
-// card.style.display = "none";
-
-// });
-
-var a = document.getElementById("eliminarBtn");
