@@ -46,11 +46,26 @@ var agregarForm = document.getElementById("agregarForm");
 agregarForm.addEventListener("submit",(e) =>  agregarUsuario(e));
 
 window.addEventListener("load", () => {
-    const btnsDelete = document.querySelectorAll(".card-user__button");
-    btnsDelete.forEach(x => {
-        x.addEventListener("click", () => { console.log("Clic en eliminar") });
-    })
+    asignarEventoEliminar();
 })
+
+const asignarEventoEliminar = () => {
+    const btnsDelete = document.querySelectorAll(".card-user__button");
+
+    
+    btnsDelete.forEach(x => {
+        x.addEventListener("click", (e) => { 
+            console.log(e);
+            var id = e.target.id;
+            var idUsuario = id.split("_")[1]; 
+            var users = getUsuarios();
+
+            users = users.filter(x => x.id != idUsuario);
+            localStorage.setItem("usuarios", JSON.stringify(users));
+            mostrarData(users);
+        });
+    })
+}
 
 
 
@@ -78,6 +93,7 @@ const mostrarData = (data) => {
 
 	// 'body' ahora contiene el HTML de las cajas generadas dinámicamente
 	document.getElementById("data").innerHTML = body;
+    asignarEventoEliminar();
 	//console.log(body)
 };
 
