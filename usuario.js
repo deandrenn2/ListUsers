@@ -9,8 +9,6 @@ const agregarUsuario = (e) => {
 	const data = new FormData(e.target);
 	const dataObject = Object.fromEntries(data.entries());
 	const foto = dataObject.foto;
-	const file = document.querySelector("#fotoFl").files[0];	
-	console.log(file, foto);
 	const users = getUsuarios();
 
 	const reader = new FileReader();
@@ -82,8 +80,6 @@ const mostrarData = (data) => {
     let body = "";
 	for (let i = 0; i < data.length; i++) {
 		var imagen = atob(data[i].foto);
-		console.log(imagen);
-		const imageURL = URL.createObjectURL(new Blob([imagen], { type: 'image/png' })); // Reemplaza 'image/png' con el tipo de imagen correcto
 		body += `<div class="card-user">
         <a id="eliminarBtn_${
 					data[i].id
@@ -116,7 +112,6 @@ const mostrarData = (data) => {
 	// 'body' ahora contiene el HTML de las cajas generadas dinámicamente
 	document.getElementById("data").innerHTML = body;
 	asignarEventoEliminar();
-	//console.log(body)
 };
 
 let dataUsuarios = getUsuarios();
