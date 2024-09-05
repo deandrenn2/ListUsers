@@ -16,7 +16,7 @@ const agregarUsuario = (e) => {
 
 		reader.onload = () => {
 			const imageData = reader.result;
-			const imageBase64 = btoa(imageData);
+			const imageBase64 = window.btoa(imageData);
 
 			const newUser = {
 				id: 1,
@@ -79,7 +79,7 @@ const mostrarData = (data) => {
 	localStorage.setItem("usuarios", JSON.stringify(data));
     let body = "";
 	for (let i = 0; i < data.length; i++) {
-		var imagen = atob(data[i].foto);
+		var imagen =data[i]?.foto && window.atob(data[i]?.foto);
 		body += `<div class="card-user">
         <a id="eliminarBtn_${
 					data[i].id
@@ -88,7 +88,7 @@ const mostrarData = (data) => {
                         <div class="usuario">usuario ${data[i].id}</div>
                         <span class="Usuar">${data[i].name}</span>	
                         ${
-													data[i].foto ? (
+													data[i]?.foto ? (
 														`<img
 															class="card-user__img"
 															src="${imagen}"
